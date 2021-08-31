@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "lint-staged"
+      "pre-push": "npm run test"
     }
   },
   "devDependencies": {
