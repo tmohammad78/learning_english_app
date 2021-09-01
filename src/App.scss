@@ -6,7 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.customButton {
+  border-radius: 50% !important;
+  min-width: 55px;
+  min-height: 55px;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

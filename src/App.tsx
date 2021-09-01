@@ -1,24 +1,17 @@
 import logo from './logo.svg';
 import Home from 'src/components/pages/home';
 import './App.scss';
+import Button from 'src/components/button';
 
 function App() {
+  function click() {
+    console.log('this is test');
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-        <Home />
-      </header>
+      <Button handleClick={click} customClass="customButton">
+        <img src={logo} className="logo" />
+      </Button>
     </div>
   );
 }
