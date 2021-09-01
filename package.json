@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test -- --watchAll=false"
+      "pre-commit": "npm run test -- --watchAll=false"
     }
   },
   "devDependencies": {
