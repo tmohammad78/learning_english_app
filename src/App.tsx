@@ -1,7 +1,11 @@
-import './App.scss';
+import DaysPage from 'src/pages/days';
 
 function App() {
-  return <div className="App">Learn React</div>;
+  return (
+    <div className="App">
+      <DaysPage />
+    </div>
+  );
 }
 
 export default App;

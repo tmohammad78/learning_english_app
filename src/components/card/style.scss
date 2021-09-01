@@ -1,0 +1,14 @@
+.card-parent {
+  position: relative;
+  border-radius: 5px;
+  margin: 30px auto;
+  width: 80%;
+  height: 140px;
+  overflow: hidden;
+  box-shadow: 0px 0px 5px rgba(170, 170, 170, 71%);
+  .title {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
