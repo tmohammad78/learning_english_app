@@ -1,7 +1,7 @@
 import './style.scss';
 
 interface ICard {
-  title: string;
+  title: string | 'default';
 }
 
 const Card = ({ title }: ICard) => {

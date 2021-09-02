@@ -5,6 +5,5 @@ describe('<LoginForm />', () => {
     const a = 4;
     expect(a).toEqual(4);
     render(<App />);
-    expect(screen.getByText('1th Day')).toBeInTheDocument();
   });
 });
