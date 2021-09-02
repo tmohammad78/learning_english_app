@@ -4,6 +4,10 @@ export const differenceDate = (lastTimeUser: any) => {
   return parseInt((nowTime - lastTimeUser) / (1000 * 60 * 60 * 24), 10);
 };
 
-export const isAfter1Day = (lastTime: any) => {
-  return differenceDate(lastTime) > 0 ? true : false;
+export const isHisTurn = (lastTime: any) => {
+  return lastTime
+    ? differenceDate(JSON.parse(lastTime)) > 0
+      ? true
+      : false
+    : false;
 };
