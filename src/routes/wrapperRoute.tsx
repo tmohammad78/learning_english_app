@@ -3,17 +3,25 @@ import { IRoutes } from 'src/types/route';
 import { isHisTurn } from 'src/utils/checkDate';
 import { readLocalStorage } from 'src/utils/localStorage';
 
-const WrapperRoute = (route: IRoutes) => {
+const WrapperRoute = (route: any) => {
   const lastSeen = readLocalStorage('lastSeen');
   // !isHisTurn(lastSeen)
+  console.log(route.computedMatch.path);
+
   return (
     <Route
       path={route.path}
       render={(props) => {
-        if (false) {
-          return <route.component {...props} routes={route.routes} />;
+        if (true) {
+          return (
+            <route.component
+              {...props}
+              routes={route.routes}
+              step={route.computedMatch.path.split(/th|\//)[1]}
+            />
+          );
         } else {
-          <Redirect to="/7th" />;
+          <Redirect to="/sdsldf" />;
         }
       }}
     />
