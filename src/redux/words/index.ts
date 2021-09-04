@@ -1,25 +1,15 @@
 import { WordState } from 'src/types/store';
+import { current } from '@reduxjs/toolkit';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IWordListState {
-  words: {
+  vocabulary: {
     [key: number]: WordState[];
   };
 }
 
 const initialState: IWordListState = {
-  words: {
-    7: [
-      {
-        id: null,
-        name: null,
-        type: null,
-        meaning: null,
-        example: null,
-        synonym: null,
-      },
-    ],
-  },
+  vocabulary: {},
 };
 
 export const wordSlice = createSlice({
@@ -30,8 +20,9 @@ export const wordSlice = createSlice({
       state,
       action: PayloadAction<{ step: number; newWord: WordState }>,
     ) => {
+      console.log(current(state));
       const { step, newWord } = action.payload;
-      state.words[step].push(newWord);
+      state.vocabulary[step] = [{ ...state, ...newWord }];
     },
   },
 });
