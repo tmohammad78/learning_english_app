@@ -13,8 +13,6 @@ export const configSlice = createSlice({
   initialState,
   reducers: {
     setLastSeen: (state, action: PayloadAction<any>) => {
-      console.log(state.lastSeen);
-
       state.lastSeen = action.payload;
     },
   },

@@ -20,7 +20,6 @@ export const wordSlice = createSlice({
       state,
       action: PayloadAction<{ step: number; newWord: WordState }>,
     ) => {
-      console.log(current(state));
       const { step, newWord } = action.payload;
 
       state.vocabulary[step] = state.vocabulary[step]

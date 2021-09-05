@@ -1,37 +1,49 @@
 import { IRoutes } from 'src/types/route';
-import GeneralDay from 'src/components/generalDay';
 import NotFound from 'src/pages/notFound';
 import Home from 'src/components/pages/home';
-import Steps from 'src/pages/steps';
+import StepsPage from 'src/pages/steps';
+import PreviewPage from 'src/pages/preview';
 
 export const Routes: IRoutes[] = [
   {
     path: '/7th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
+    routes: [
+      {
+        path: '/7th/test',
+        component: PreviewPage,
+      },
+    ],
   },
   {
     path: '/6th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
   },
   {
     path: '/5th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
   },
   {
     path: '/4th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
   },
   {
     path: '/3th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
   },
   {
     path: '/2th',
-    component: Steps,
+    component: StepsPage,
   },
   {
     path: '/1th',
-    component: Steps,
+    exact: true,
+    component: StepsPage,
   },
   {
     path: '/',

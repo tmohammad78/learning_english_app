@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom';
 
 export interface IRoutes extends RouteProps {
-  routes?: IRoutes;
+  routes?: IRoutes[];
   component: React.ComponentType<any>;
 }

@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import createPortal from 'src/components/portal/createPortal';
+import createPortal from 'src/hooks/portal/createPortal';
 import { IPortal } from 'src/types/portal';
 
 export const defaultContainerId = 'modal-root';
@@ -17,10 +17,10 @@ const usePortal = ({
   onHide,
 }: IPortal) => {
   const [isShow, setIsShow] = useState<boolean>(defaultShow);
-  const Portal = useCallback(createPortal(containerId, isShow), [
-    internalShowHide,
-    isShow,
-  ]);
+  const Portal = useCallback(
+    createPortal(containerId, !internalShowHide || isShow),
+    [internalShowHide, isShow],
+  );
 
   const hide = () => {
     setIsShow(false);

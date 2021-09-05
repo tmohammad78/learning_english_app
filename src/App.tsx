@@ -8,9 +8,9 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          {Routes.map((route, i) => {
-            return <WrapperRoute {...route} key={i} />;
-          })}
+          {Routes.map((route, i) => (
+            <WrapperRoute {...route} key={i} />
+          ))}
         </Switch>
       </Router>
     </div>

@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router';
-import { useLocation } from 'react-router-dom';
 import Card from 'src/components/card';
 import { RootState } from 'src/redux/store';
 import { addWord } from 'src/redux/words';
@@ -12,7 +10,6 @@ interface IGeneralDay {
 }
 
 const GeneralDay = ({ step }: IGeneralDay) => {
-  const location = useLocation();
   const dispatch = useDispatch();
   const vocabulary = useSelector<
     RootState,
@@ -20,7 +17,6 @@ const GeneralDay = ({ step }: IGeneralDay) => {
       [key: number]: WordState[];
     }
   >((state) => state.words.vocabulary);
-  console.log(vocabulary[7]);
 
   useEffect(() => {
     const obj = {

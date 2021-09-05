@@ -6,7 +6,7 @@ import { addWord } from 'src/redux/words';
 interface IStep {
   step: string;
 }
-const Steps = ({ step }: IStep) => {
+const StepsPage = ({ step }: IStep) => {
   const dispatch = useDispatch();
 
   const click = () => {
@@ -29,4 +29,4 @@ const Steps = ({ step }: IStep) => {
   );
 };
 
-export default Steps;
+export default StepsPage;

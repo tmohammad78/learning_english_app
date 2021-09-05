@@ -6,8 +6,6 @@ import { readLocalStorage } from 'src/utils/localStorage';
 const WrapperRoute = (route: any) => {
   const lastSeen = readLocalStorage('lastSeen');
   // !isHisTurn(lastSeen)
-  console.log(route.computedMatch.path);
-
   return (
     <Route
       path={route.path}
