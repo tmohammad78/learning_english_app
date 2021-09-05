@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useStore } from 'react-redux';
 import usePortal from 'src/components/portal/use-portal';
+import { WordState } from 'src/types/store';
 import './style.scss';
 
 interface ICard {
-  title: string | null;
+  word: WordState;
 }
 
-const Card = ({ title }: ICard) => {
+const Card = ({ word }: ICard) => {
   const [isFadeOut, setIsFadeOut] = useState(false);
   const { Portal, show, hide, isShow } = usePortal({
     defaultShow: false,
@@ -31,20 +32,30 @@ const Card = ({ title }: ICard) => {
   const handleClickBackdrop = (e: any) => {
     // const { id } = e.target as HTMLDivElement;
 
-    if (e.target.id === 'modal' || e.target.id === 'modal-dialog') close();
+    if (e.target.id === 'modal') close();
   };
+
+  const handleAnimEnd = () => {
+    if (!isFadeOut) return;
+
+    setIsFadeOut(false);
+    hide();
+  };
+
   return (
     <>
       <div className="card-parent" onClick={show}>
         <div className="title">
-          <span>{title ?? 'default'}</span>
+          <span>{word.name ?? 'default'}</span>
         </div>
       </div>
       <Portal>
         <div
+          id="modal"
           className={`modal ${isFadeOut && 'modalFadeOut'}`}
+          onAnimationEnd={handleAnimEnd}
           onClick={handleClickBackdrop}>
-          this is modal
+          <div className="modal-content">this is modal</div>
         </div>
       </Portal>
     </>

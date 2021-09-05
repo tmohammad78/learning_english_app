@@ -46,6 +46,15 @@
   }
 }
 
+@keyframes sideout {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
 .modal {
   position: fixed;
   top: 0;
@@ -56,4 +65,16 @@
   &.modalFadeOut {
     animation-name: fadeOut;
   }
+  .modalDialog {
+    animation-name: sideout;
+  }
+}
+
+.modal-content {
+  margin: 1.75rem auto;
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  background-clip: padding-box;
+  border: 3px solid rgba(0, 0, 0, 0.2);
 }

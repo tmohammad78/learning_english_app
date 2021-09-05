@@ -5,9 +5,9 @@ export default function DaysPage() {
   return (
     <div>
       Days page
-      {Days.map((day, i) => {
+      {/* {Days.map((day, i) => {
         return <Card title={day} key={i} />;
-      })}
+      })} */}
     </div>
   );
 }

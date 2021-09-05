@@ -38,7 +38,7 @@ const GeneralDay = ({ step }: IGeneralDay) => {
     <div>
       This is step {step}
       {vocabulary[7]?.map((word) => {
-        return <Card title={word.name} key={word.id} />;
+        return <Card word={word} key={word.id} />;
       })}
     </div>
   );
