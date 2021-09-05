@@ -22,7 +22,10 @@ export const wordSlice = createSlice({
     ) => {
       console.log(current(state));
       const { step, newWord } = action.payload;
-      state.vocabulary[step] = [{ ...state, ...newWord }];
+
+      state.vocabulary[step] = state.vocabulary[step]
+        ? [...state.vocabulary[step], newWord]
+        : [newWord];
     },
   },
 });
