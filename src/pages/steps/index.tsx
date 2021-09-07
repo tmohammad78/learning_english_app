@@ -19,7 +19,7 @@ const StepsPage = ({ step }: IStep) => {
       synonym: ['upset'],
     };
 
-    dispatch(addWord({ step: 7, newWord: obj }));
+    // dispatch(addWord({ step: 7, newWord: obj }));
   };
   return (
     <>

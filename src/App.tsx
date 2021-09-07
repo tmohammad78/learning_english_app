@@ -1,4 +1,3 @@
-import DaysPage from 'src/pages/days';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Routes } from 'src/routes/routes';
 import WrapperRoute from 'src/routes/wrapperRoute';

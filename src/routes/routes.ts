@@ -1,6 +1,6 @@
 import { IRoutes } from 'src/types/route';
 import NotFound from 'src/pages/notFound';
-import Home from 'src/components/pages/home';
+import Home from 'src/pages/home';
 import StepsPage from 'src/pages/steps';
 import PreviewPage from 'src/pages/preview';
 

@@ -1,10 +1,10 @@
-export const Days = [
-  '1th Day',
-  '2th Day',
-  '3th Day',
-  '4th Day',
-  '5th Day',
-  '6th Day',
-  '7th Day',
-  'Store',
-];
+export const Days: { [key: string]: string } = {
+  1: '7th Day',
+  2: '6th Day',
+  3: '5th Day',
+  4: '4th Day',
+  5: '3th Day',
+  6: '2th Day',
+  7: '1th Day',
+  8: 'Store',
+};

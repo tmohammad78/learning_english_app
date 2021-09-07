@@ -28,7 +28,7 @@ const GeneralDay = ({ step }: IGeneralDay) => {
       synonym: ['nice'],
     };
 
-    dispatch(addWord({ step: 7, newWord: obj }));
+    // dispatch(addWord({ step: 7, newWord: obj }));
   }, []);
   return (
     <div>
