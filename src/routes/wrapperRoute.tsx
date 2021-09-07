@@ -11,13 +11,7 @@ const WrapperRoute = (route: any) => {
       path={route.path}
       render={(props) => {
         if (true) {
-          return (
-            <route.component
-              {...props}
-              routes={route.routes}
-              step={route.computedMatch.path.split(/th|\//)[1]}
-            />
-          );
+          return <route.component {...props} routes={route.routes} />;
         } else {
           <Redirect to="/sdsldf" />;
         }

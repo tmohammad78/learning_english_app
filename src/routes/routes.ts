@@ -6,15 +6,19 @@ import PreviewPage from 'src/pages/preview';
 
 export const Routes: IRoutes[] = [
   {
+    path: '/',
+    exact: true,
+    component: Home,
+  },
+  {
+    path: '/7th/:word',
+    exact: true,
+    component: PreviewPage,
+  },
+  {
     path: '/7th',
     exact: true,
     component: StepsPage,
-    routes: [
-      {
-        path: '/7th/test',
-        component: PreviewPage,
-      },
-    ],
   },
   {
     path: '/6th',
@@ -44,11 +48,6 @@ export const Routes: IRoutes[] = [
     path: '/1th',
     exact: true,
     component: StepsPage,
-  },
-  {
-    path: '/',
-    exact: true,
-    component: Home,
   },
   {
     component: NotFound,
