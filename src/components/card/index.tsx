@@ -10,7 +10,10 @@ const Card = ({ word }: ICard) => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push(`${history.location.pathname}/test`);
+    history.push({
+      pathname: `${history.location.pathname}/${word.name}`,
+      state: word,
+    });
   };
 
   return (

@@ -6,24 +6,13 @@ import { addWord } from 'src/redux/words';
 interface IStep {
   step: string;
 }
-const StepsPage = ({ step }: IStep) => {
-  const dispatch = useDispatch();
+const StepsPage = (props: any) => {
+  console.log(props);
 
-  const click = () => {
-    const obj = {
-      id: 13,
-      name: 'sad',
-      type: ['adj'],
-      meaning: ['ناراحت'],
-      example: ['he seems upset'],
-      synonym: ['upset'],
-    };
-
-    // dispatch(addWord({ step: 7, newWord: obj }));
-  };
+  const click = () => {};
   return (
     <>
-      <GeneralDay step={step} />
+      <GeneralDay step={props.location.pathname.split(/th|\//)[1]} />
       <Button handleClick={click} submitText="Add" />
     </>
   );

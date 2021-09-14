@@ -6,34 +6,23 @@ import { addWord } from 'src/redux/words';
 import { WordState } from 'src/types/store';
 
 interface IGeneralDay {
-  step: string;
+  step: number;
+}
+interface IState {
+  [key: number]: WordState[];
 }
 
 const GeneralDay = ({ step }: IGeneralDay) => {
-  const dispatch = useDispatch();
-  const vocabulary = useSelector<
-    RootState,
-    {
-      [key: number]: WordState[];
-    }
-  >((state) => state.words.vocabulary);
+  const vocabulary = useSelector<RootState, IState>(
+    (state) => state.words.vocabulary,
+  );
 
-  useEffect(() => {
-    const obj = {
-      id: 12,
-      name: 'good',
-      type: ['adj'],
-      meaning: ['خوب'],
-      example: ['This book is good'],
-      synonym: ['nice'],
-    };
+  console.log(step);
 
-    // dispatch(addWord({ step: 7, newWord: obj }));
-  }, []);
   return (
     <div>
       This is step {step}
-      {vocabulary[7]?.map((word) => {
+      {vocabulary[step]?.map((word) => {
         return <Card word={word} key={word.id} />;
       })}
     </div>
