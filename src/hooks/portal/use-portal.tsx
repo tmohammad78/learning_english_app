@@ -31,7 +31,7 @@ const usePortal = ({
   };
 
   const toggle = () => {
-    isShow ? hide() : show();
+    setIsShow((prev) => !prev);
   };
 
   return { Portal, isShow, toggle, show, hide };

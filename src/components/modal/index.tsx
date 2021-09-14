@@ -2,12 +2,21 @@ import { ReactNode, useEffect, useState } from 'react';
 import usePortal from 'src/hooks/portal/use-portal';
 import './style.scss';
 
-const Modal = ({ chidlren }: { chidlren: ReactNode }) => {
+const Modal = ({
+  children,
+  showModal,
+}: {
+  children: ReactNode;
+  showModal: boolean;
+}) => {
   const [isFadeOut, setIsFadeOut] = useState(false);
-  const { Portal, show, hide, isShow } = usePortal({
-    defaultShow: false,
+  const { Portal, show, hide, isShow, toggle } = usePortal({
     escToHide: false,
   });
+
+  useEffect(() => {
+    toggle();
+  }, [showModal]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -29,8 +38,8 @@ const Modal = ({ chidlren }: { chidlren: ReactNode }) => {
     hide();
   };
 
-  const handleClickBackdrop = (e: React.MouseEvent<HTMLElement>) => {
-    if ((e.target as any).id === 'modal') close();
+  const handleClickBackdrop = (e: any) => {
+    if (e.target.id === 'modal') close();
   };
 
   return (
@@ -40,7 +49,7 @@ const Modal = ({ chidlren }: { chidlren: ReactNode }) => {
         className={`modal ${isFadeOut && 'modalFadeOut'}`}
         onAnimationEnd={handleAnimEnd}
         onClick={handleClickBackdrop}>
-        <div className="modal-content">{chidlren}</div>
+        <div className="modal-content">{children}</div>
       </div>
     </Portal>
   );
