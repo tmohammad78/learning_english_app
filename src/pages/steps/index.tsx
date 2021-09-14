@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from 'src/components/button';
+import WordsForm from 'src/components/forms/wordsForm';
 import GeneralDay from 'src/components/generalDay';
 import Modal from 'src/components/modal';
 import { addWord } from 'src/redux/words';
@@ -21,7 +22,7 @@ const StepsPage = (props: any) => {
       <Button handleClick={click} submitText="Add" />
       {show ? true : false}
       <Modal showModal={show}>
-        <div>This is </div>
+        <WordsForm />
       </Modal>
     </>
   );
