@@ -6,7 +6,10 @@ const Modal = ({
   children,
   showModal,
 }: {
-  children: ReactNode;
+  children: {
+    header?: ReactNode;
+    body: ReactNode;
+  };
   showModal: boolean;
 }) => {
   const [isFadeOut, setIsFadeOut] = useState(false);
@@ -49,7 +52,10 @@ const Modal = ({
         className={`modal ${isFadeOut && 'modalFadeOut'}`}
         onAnimationEnd={handleAnimEnd}
         onClick={handleClickBackdrop}>
-        <div className="modal-content">{children}</div>
+        <div className="modal__body">
+          <header className="modal__body-header">{children?.header}</header>
+          {children.body}
+        </div>
       </div>
     </Portal>
   );

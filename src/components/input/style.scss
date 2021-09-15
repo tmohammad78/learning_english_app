@@ -1,5 +1,58 @@
 .input {
+  position: relative;
+  border-radius: 5px;
+  border-bottom: 2px solid white;
+  margin: 20px auto;
+  box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+  will-change: transform, transition;
+  span {
+    position: absolute;
+    top: 50%;
+    user-select: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    left: 10px;
+    transition: all 0.3s ease-out;
+    color: rgb(156, 156, 156);
+  }
+  .error {
+    color: red;
+  }
+
+  &.focus {
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.35);
+    span {
+      top: 0px;
+      left: 15px;
+      font-size: 15px;
+      color: black;
+      padding: 0px 5px;
+      background-color: white;
+    }
+  }
   &__main {
+    border: none;
+    border-radius: 5px;
+    padding: 13px 7px;
+    font-size: 20px;
+    border: none;
+    width: 97%;
+    color: black;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: white;
+      opacity: 0.7;
+    }
+    &:-webkit-internal-autofill-selected {
+      background-color: transparent !important;
+    }
+    &:-webkit-autofill,
+    -webkit-autofill:hover -webkit-autofill:focus {
+      background-color: transparent !important;
+    }
   }
   &__label {
   }

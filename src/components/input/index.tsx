@@ -1,15 +1,14 @@
+import { useState } from 'react';
 import './style.scss';
 
 interface IProps {
-  onChange: () => {};
+  onChange: (e: any) => void;
   type: string | 'text';
-  name: string;
   value: string | '';
   label: string;
   placeHolder?: string;
   error?: boolean;
   className?: string;
-  register?: any;
   onEnter?: () => {};
   onBlur?: () => {};
 }
@@ -18,24 +17,26 @@ const Input = ({
   onChange,
   onEnter,
   type = 'text',
-  name,
   value,
   label,
   placeHolder,
   error,
   className,
-  register,
   onBlur,
   ...rest
 }: IProps) => {
+  const [focus, setFocus] = useState(false);
+
   return (
-    <div className="input">
+    <div
+      className={`input ${focus ? 'focus' : ''}`}
+      onFocus={() => setFocus(true)}
+      onBlur={() => !value && setFocus(false)}>
       <span className="input__label">{label}</span>
       <input
-        {...register(name)}
         {...rest}
         type={type}
-        className={`input__main ${className}`}
+        className={`input__main ${className ?? ''}`}
         onChange={onChange}
         value={value}
         placeholder={placeHolder}

@@ -22,7 +22,10 @@ const StepsPage = (props: any) => {
       <Button handleClick={click} submitText="Add" />
       {show ? true : false}
       <Modal showModal={show}>
-        <WordsForm />
+        {{
+          header: <div>Header icon</div>,
+          body: <WordsForm />,
+        }}
       </Modal>
     </>
   );
